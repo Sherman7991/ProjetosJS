@@ -1,9 +1,81 @@
 <html>
     <head>
+        <meta charset="utf-8">
         <title>First Project OOD</title>
+        <link rel="stylesheet" href="index.css">
+        <script type="text/javascript" src="index.js"></script>
     </head>
     <body>
-        
+        <div id="mainContent">
+
+            <div id="cnt1-1">
+
+                <form action="">
+
+                    <ul class="listFormTextBox">
+                        <li class="listFormCampos">
+                            <label for="">Name<span style="color:red;">*</span></label><br/>
+                            <input id="nameClienteForm" type="text" placeholder="Ex: John Doe Silva" required="" size="40" autofocus>
+                        </li>
+                        <li class="listFormCampos">
+                            <label for="">Email<span style="color:red;">*</span></label><br/>
+                            <input id="emailClienteForm" type="email" placeholder="Ex: johndoe@exemplo.com.br" required="" size="40" type="email">
+                        </li>
+                        <li class="listFormCampos">
+                            <label for="">CPF<span style="color:red;">*</span></label><br/>
+                            <input id="cpfClienteForm" type="text" maxlength="11" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="Ex:000.000.000-00" required="" size="40" type="email">
+                        </li>
+                        <li class="listFormCampos">
+                            <label for="genderLabel">Gender</label>
+                            <select id="genderClienteForm" name="gender" class="center">
+                             <option value="masculino">Man</option>
+                             <option value="feminino">Woman</option>
+                             <option value="no">Undefined</option>
+                            </select>
+                        </li>
+                        <li class="listFormCampos">
+                            <label for="old">Years Old</label>
+                            <select id="oldClienteForm" name="gender" class="center" >
+                             <option value="masculino">16 - 18 Years</option>
+                             <option value="feminino">19 - 23 Years</option>
+                             <option value="no">23 - 30 Years</option>
+                             <option value="no">More than 30 Years</option>
+                            </select>
+                        </li>
+                        <li class="listFormCampos">
+                            <label for="">Salary<span style="color:red;">*</span></label><br/>
+                            <form oninput="result.value= 60 * parseInt(b.value)">
+                                <input type="range" id="b" name="b" value="50" />
+                                <p>R$ <output id="salaryClienteForm" name="result" for="b"><span>3000</span></output>,00</p>
+                                
+                            </form>
+                        </li>
+                    </ul>
+                    
+                    <button class="buttonSend" onclick="armazenClient()">Gerar Cliente</button>
+                    <button class="buttonSend" onclick="clearForm()">Limpar</button>
+    
+
+
+                </form>
+                
+            </div>
+
+            <div id="cnt2-1">
+                <ul class="listFormTextBox">
+                    <li class="listFormCampos">
+                        <label for="fname">Texto</label><br/>
+                        <textarea name="clientText" id="TextoCliente" class="textClientStyle" cols="30" rows="10"></textarea>
+                    </li>
+                </ul>
+                
+
+            </div>
+
+            
+
+        </div>
+
 
     </body>
 </html>
