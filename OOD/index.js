@@ -6,11 +6,12 @@ function armazenClient(){
     let GenderC = document.getElementById("genderClienteForm").value;
     let cpfC = document.getElementById("cpfClienteForm").value;
     
-    if(Validate(NameC , EmailC) ==true){
-        
-    }
-    
-    else if( ValidateCPF(cpfC)==false){
+    if(Validate(NameC , EmailC) === 0){
+        alert("Nome ou email Inválido")
+        console.log(Validate(NameC , EmailC));
+        return;
+    }    
+    else if( ValidateCPF(cpfC)==0){
         alert("CPF Inválido");
         return;
     }
@@ -21,10 +22,10 @@ function armazenClient(){
 function Validate(n,e){
     if ((n == "") || (e == "")) {
         alert("Algum campo obrigatório está vazio");
-        return false;
+        return 0;
     }
     else{
-        return true;
+        return 1;
     }
 
 }
@@ -33,11 +34,17 @@ function ValidateCPF(c){
     if(c.length == 11){
         let firstValidation = loopCPF(c,9);
         let secondValidation =  loopCPF(c,10);
+        
 
-        console.log(firstValidation);
-        console.log(secondValidation);
+        if(firstValidation ==c[9] && secondValidation == c[10]){
+            alert("CPF Correto");
+            return 1;
+        }
+        else{
+            alert("CPF Incorreto");
+            return 0;
+        }
 
-        return true;
     }
     else{
         return false;
